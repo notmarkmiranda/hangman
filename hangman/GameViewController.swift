@@ -19,13 +19,14 @@ class GameViewController: UIViewController {
     var wordArray = ["coffee", "sleep"]
     var guessesRemaining = 5
     var guessArray = [String]()
+    var incorrectArray = [String]()
     var secretWord: String!
+    var underscores: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guessCount.text = String(guessesRemaining)
         wordPicker()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,22 +36,73 @@ class GameViewController: UIViewController {
     
     @IBAction func submitGuess() {
         if let userSubmitted = userInput.text {
-            lengthChecker(character: userSubmitted)
+            letterChecker(character: userSubmitted)
         }
         
     }
     
-    func lengthChecker(character: String) {
+    func letterChecker(character: String) {
         if character.characters.count > 1 {
             clearAndDismiss()
             resultLabel.text = "YOU ENTERED TOO MANY CHARACTERS!"
         } else if regex(input: character) == false {
             clearAndDismiss()
             resultLabel.text = "THAT WASN'T A LETTER! TRY AGAIN."
-            // check if the letter is right or wrong
         } else {
-            print("happy path")
+            clearAndDismiss()
+            verifyLetter(input: character)
         }
+    }
+    
+    func verifyLetter(input: String) {
+        let tempUnderscores: Int = self.underscores
+        for (index, letter) in secretWord.characters.enumerated() {
+            let stringLetter = String(letter)
+            if stringLetter == input.lowercased() {
+                guessArray[index] = stringLetter.uppercased()
+                underscores! -= 1
+            }
+            
+        }
+        loseATurn(oldUnderscores: tempUnderscores, letterInput: input)
+        updateWordLabels()
+    }
+    
+    func loseATurn(oldUnderscores: Int, letterInput: String) {
+        if oldUnderscores == underscores {
+            guessesRemaining -= 1
+            incorrectArray.append(letterInput.uppercased())
+        }
+        checkTheCount()
+    }
+    
+    func checkTheCount() {
+        if guessesRemaining == 0 {
+            self.performSegue(withIdentifier: "loseEndGame", sender: self)
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // this is where you stopped
+        if segue.identifier == "loseEndGame" {
+            if let viewController = segue.destination as? LoseGameViewController {
+            
+                viewController.toPass = secretWord
+                //viewController.property = property
+            }
+            
+//            let indexPath = self.tableView.indexPathForSelectedRow {
+//            let selectedVehicle = vehicles[indexPath.row]
+//            nextScene.currentVehicle = selectedVehicle
+        }
+    }
+    
+    
+    func updateWordLabels() {
+        guessCount.text = String(guessesRemaining)
+        activeWord.text = String(guessArray.joined(separator: " "))
+        wrongLetters.text = String(incorrectArray.joined(separator: " "))
     }
     
     func clearAndDismiss() {
@@ -65,10 +117,11 @@ class GameViewController: UIViewController {
     }
     
     func setWordLabel() {
+        underscores = 0
         for _ in secretWord.characters {
+            underscores! += 1
             guessArray.append("_")
         }
-        
         activeWord.text = String(guessArray.joined(separator: " "))
     }
     

@@ -106,7 +106,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A B" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUs-8b-jFt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUs-8b-jFt">
                                 <frame key="frameInset" minX="25" minY="524" width="332" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -143,16 +143,17 @@
                         <outlet property="resultLabel" destination="wBc-it-0Yp" id="waT-FQ-xUe"/>
                         <outlet property="userInput" destination="8iY-JJ-85H" id="ueq-lE-AE4"/>
                         <outlet property="wrongLetters" destination="eUs-8b-jFt" id="LcV-2q-PXI"/>
+                        <segue destination="x3P-yw-ZmK" kind="presentation" identifier="loseEndGame" id="rTU-v8-VMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbr-TL-L15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896.79999999999995" y="136.28185907046478"/>
         </scene>
-        <!--View Controller-->
+        <!--Lose Game View Controller-->
         <scene sceneID="QiU-0w-V70">
             <objects>
-                <viewController id="x3P-yw-ZmK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loseEndGame" id="x3P-yw-ZmK" customClass="LoseGameViewController" customModule="hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gtf-h9-KIl"/>
                         <viewControllerLayoutGuide type="bottom" id="0fZ-ZY-yTB"/>
@@ -161,8 +162,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOU DID IT!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFQ-Sd-ahQ">
-                                <frame key="frameInset" minX="75" minY="275" width="225" height="117"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOU LOST!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFQ-Sd-ahQ">
+                                <frame key="frameInset" minX="75" minY="224" width="225" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,6 +174,13 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <state key="normal" title="PLAY AGAIN!"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bm-y8-nNP">
+                                <frame key="frameInset" minX="16" minY="275" width="343" height="203"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.27061858526402988" blue="0.58681691753926701" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -181,10 +189,13 @@
                             <constraint firstItem="pcR-DW-f2W" firstAttribute="leading" secondItem="UrL-o2-oTE" secondAttribute="leading" id="sJ8-Ip-h0N"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wordLabel" destination="9Bm-y8-nNP" id="p0l-Jl-2bX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hp8-g3-gkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1724" y="136"/>
         </scene>
     </scenes>
 </document>

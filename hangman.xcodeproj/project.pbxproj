@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA01A4191DA1DD5C0058F4BC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01A4181DA1DD5C0058F4BC /* GameViewController.swift */; };
+		DA01A41B1DA21D090058F4BC /* LoseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01A41A1DA21D090058F4BC /* LoseGameViewController.swift */; };
 		DA1EC6C31DA1955C006DC7AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EC6C21DA1955C006DC7AC /* AppDelegate.swift */; };
 		DA1EC6C51DA1955C006DC7AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EC6C41DA1955C006DC7AC /* ViewController.swift */; };
 		DA1EC6C81DA1955C006DC7AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1EC6C61DA1955C006DC7AC /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		DA01A4181DA1DD5C0058F4BC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DA01A41A1DA21D090058F4BC /* LoseGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoseGameViewController.swift; sourceTree = "<group>"; };
 		DA1EC6BF1DA1955C006DC7AC /* hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1EC6C21DA1955C006DC7AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA1EC6C41DA1955C006DC7AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				DA1EC6C91DA1955C006DC7AC /* Assets.xcassets */,
 				DA1EC6CB1DA1955C006DC7AC /* LaunchScreen.storyboard */,
 				DA1EC6CE1DA1955C006DC7AC /* Info.plist */,
+				DA01A41A1DA21D090058F4BC /* LoseGameViewController.swift */,
 			);
 			path = hangman;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				DA1EC6C51DA1955C006DC7AC /* ViewController.swift in Sources */,
 				DA01A4191DA1DD5C0058F4BC /* GameViewController.swift in Sources */,
 				DA1EC6C31DA1955C006DC7AC /* AppDelegate.swift in Sources */,
+				DA01A41B1DA21D090058F4BC /* LoseGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
