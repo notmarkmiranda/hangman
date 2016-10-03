@@ -22,6 +22,7 @@
 		DA1EC6C91DA1955C006DC7AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA1EC6CC1DA1955C006DC7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1EC6CE1DA1955C006DC7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA1EC6D41DA19997006DC7AC /* hang.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = hang.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +39,7 @@
 		DA1EC6B61DA1955C006DC7AC = {
 			isa = PBXGroup;
 			children = (
+				DA1EC6D41DA19997006DC7AC /* hang.playground */,
 				DA1EC6C11DA1955C006DC7AC /* hangman */,
 				DA1EC6C01DA1955C006DC7AC /* Products */,
 			);
