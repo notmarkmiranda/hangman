@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var wrongLetters: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
-    var wordArray = ["coffee", "sleep"]
+    var wordArray = ["coffee", "sleep", "thing", "words", "programming", "friday", "dogs", "weird", "night", "people", "lights", "video", "football", "baseball", "mississippi", "super"]
     var guessesRemaining = 0
     var guessArray = [String]()
     var incorrectArray = [String]()
