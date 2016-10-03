@@ -22,3 +22,8 @@ for (index, letter) in word.characters.enumerated() {
 }
 
 print(guessedArray.joined())
+
+var array = ["a", "b", "c", "d", "e"]
+
+print(array.contains("e"))
+print(array.contains("f"))

@@ -162,8 +162,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOU LOST!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFQ-Sd-ahQ">
-                                <frame key="frameInset" minX="75" minY="224" width="225" height="117"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="resultLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFQ-Sd-ahQ">
+                                <frame key="frameInset" minX="16" minY="224" width="343" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,29 +173,42 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <state key="normal" title="PLAY AGAIN!"/>
+                                <connections>
+                                    <segue destination="ekR-d2-cch" kind="unwind" unwindAction="unwindToGameWithSegue:" id="pR9-cE-jea"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bm-y8-nNP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wordLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bm-y8-nNP">
                                 <frame key="frameInset" minX="16" minY="275" width="343" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="scoreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOy-ha-e12">
+                                <frame key="frameInset" minX="16" minY="566" width="343" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.27061858526402988" blue="0.58681691753926701" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0fZ-ZY-yTB" firstAttribute="top" secondItem="pcR-DW-f2W" secondAttribute="bottom" constant="109" id="4WN-uU-SXW"/>
+                            <constraint firstItem="0fZ-ZY-yTB" firstAttribute="top" secondItem="pcR-DW-f2W" secondAttribute="bottom" constant="109" id="cJO-8M-6rK"/>
                             <constraint firstAttribute="trailing" secondItem="pcR-DW-f2W" secondAttribute="trailing" id="evr-kR-x05"/>
                             <constraint firstItem="pcR-DW-f2W" firstAttribute="leading" secondItem="UrL-o2-oTE" secondAttribute="leading" id="sJ8-Ip-h0N"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="resultLabel" destination="hFQ-Sd-ahQ" id="IiD-hB-u26"/>
+                        <outlet property="scoreLabel" destination="LOy-ha-e12" id="dMS-Xi-RTK"/>
                         <outlet property="wordLabel" destination="9Bm-y8-nNP" id="p0l-Jl-2bX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hp8-g3-gkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ekR-d2-cch" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="136"/>
+            <point key="canvasLocation" x="1653.5999999999999" y="136.28185907046478"/>
         </scene>
     </scenes>
 </document>
